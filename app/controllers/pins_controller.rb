@@ -1,7 +1,8 @@
 class PinsController < ApplicationController
+  
+before_action :authenticate_user!, except: [:index, :show]
 before_action :set_pin, only: [:show, :edit, :update, :destroy]
 before_action :correct_user, only: [:edit, :update, :destroy]
-before_action :authenticate_user!, except: [:index, :show]
   def index
     @pins = Pin.all
   end
@@ -52,6 +53,6 @@ before_action :authenticate_user!, except: [:index, :show]
     end
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 end

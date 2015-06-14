@@ -40,6 +40,7 @@ gem 'bootstrap-sass'
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise', '~> 3.1.0.rc2'
+gem 'paperclip', '~> 4.2'
 
 group :development, :test do
 	gem 'sqlite3'
